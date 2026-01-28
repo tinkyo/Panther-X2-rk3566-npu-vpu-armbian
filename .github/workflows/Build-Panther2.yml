@@ -87,7 +87,7 @@ jobs:
 
       - name: Upload Armbian image to Release
         uses: ncipollo/release-action@main
-        if: ${{ steps.clean.outputs.status }} == 'success'
+        if: ${{ steps.clean.outputs.status == 'success' }}
         with:
           tag: ${{ steps.clean.outputs.build_tag }}
           artifacts: build/output/images/*
